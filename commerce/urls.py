@@ -1,0 +1,26 @@
+# from ast import Import
+from django.urls import path, include
+
+from django.conf import settings
+from django.conf.urls.static import static
+from rest_framework.routers import DefaultRouter
+
+from .views import ProductViewSets, OrdersViewSets, ShippingViewSets,UserAccountViewSets , CategoryViewSets, send, SubCategoryViewSets
+router = DefaultRouter()
+
+router.register('categories', CategoryViewSets, basename='categories')
+router.register('sub_categories', SubCategoryViewSets, basename='sub_categories')
+router.register('products', ProductViewSets, basename='products')
+router.register('cart', OrdersViewSets, basename='cart')
+# router.register('customers', CustomerViewSets, basename='customers')
+router.register('ship', ShippingViewSets, basename='ship')
+router.register('us', UserAccountViewSets, basename='us')
+
+
+urlpatterns = [
+path('api/', include(router.urls)),
+
+# path('send/', send, name="send"),
+path('send/<str:productName>/<str:mail>', send, name="send"),
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

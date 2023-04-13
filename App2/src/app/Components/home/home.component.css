@@ -1,0 +1,44 @@
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+.mat-mdc-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mdc-card__media {
+  height: 180px !important;
+  width: 70%;
+}
+
+
+
+/* .text-oneline ::ng-deep * {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+} */
+
+.text-oneline {
+  overflow:hidden ;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 200px;
+  text-align: center;
+  font-size: 17px;
+  color: #7078a6;
+  font-weight: 500;
+}
+
+.menu-cat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

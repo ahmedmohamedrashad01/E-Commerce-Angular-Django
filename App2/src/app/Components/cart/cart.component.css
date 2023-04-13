@@ -1,0 +1,119 @@
+.parent-section {
+  /* width: 90%; */
+  margin: auto;
+}
+.main {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100% !important;
+}
+
+.main div {
+  flex: 1;
+}
+
+.main .first {
+  /* align-self: flex-start; */
+  background-color: red;
+  height: 75px;
+  /* width: 100%; */
+  margin-top: 5px;
+}
+.main .first img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.main .fourth {
+  display: flex;
+  /* justify-content: center; */
+  justify-content: flex-end;
+  align-items: center;
+
+  margin-bottom: 6px;
+  /* padding: 10px; */
+
+}
+.main .fourth .add{
+    margin-left: 8px;
+    width: 35px;
+    height: 36px;
+}
+
+.main .fourth .remove{
+    margin-right: 8px;
+    width: 35px;
+    height: 36px;
+}
+.main .fourth h3 {
+  /* padding: 5px;
+    vertical-align: baseline; */
+    /* align-self: flex-end; */
+    font-weight: bold;
+    /* margin-top: 5px; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.total{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.delete-item{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.myInput{
+  width: 59px;
+  text-align: center;
+}
+
+
+
+@media screen and (min-width: 300px) {
+  .main{
+    flex-direction: column;
+  }
+
+  .main div {
+    flex: auto !important;
+  }
+
+  .main .first {
+    /* align-self: flex-start; */
+    background-color: red;
+    height: 120px;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .main .first img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+  .second{
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .main{
+    flex-direction: row;
+  }
+  .main div {
+    flex: 1 !important;
+  }
+}
+
+
+/* Input Arrow */
+
+
+

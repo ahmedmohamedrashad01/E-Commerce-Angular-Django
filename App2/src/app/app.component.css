@@ -1,0 +1,15 @@
+
+.main-app {
+  min-height: calc(100vh - 60px);
+}
+
+.foo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68px;
+  background-color: #3f51b5;
+}
+.foo h3{
+    color: whitesmoke;
+}

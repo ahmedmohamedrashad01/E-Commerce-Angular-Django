@@ -1,0 +1,88 @@
+<section class="parent-section mt-4 container-fluid">
+    <mat-card>
+        <mat-card-content>
+           <section class="main container mt-1" *ngFor="let prd of cartProducts; let i = index; trackBy:trackByFun">
+            <div class="first me-1">
+                <img src="http://127.0.0.1:8000{{prd.product.first_image}}" />
+            </div>
+            <div class="second ms-2 text-center">
+                <h3 style="font-weight: 500;color: #3F51B5;">{{prd.product.name}}</h3>
+            </div>
+            <div class="third ms-2  text-center">
+                <!-- <h3>{{prd.product.price | currency}}</h3> -->
+                <h3 style="font-weight: 500;color: #e91e63;">{{prd.totalPrice | currency}}</h3>
+            </div>
+            <div class="fourth ms-2  text-center">
+
+                <!-- <button class="remove" mat-mini-fab color="warn"  aria-label="Example icon button with a menu icon">
+                    <mat-icon >remove</mat-icon>
+                  </button> -->
+
+                  <input #inputRef class="myInput" value="{{prd.qty}}" (change)="getNewQty(inputRef.value, prd.id, prd.product.id)" type="number" min="1" class="form-control"/>
+                  <!-- <input #inputRef class="myInput form-control" value="{{prd.qty}}" (change)="getNewQty(inputRef.value, prd.id, prd.product.id)" type="number" min="1"/> -->
+                  <!-- <button  class="add" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                      <mat-icon >add</mat-icon>
+                    </button> -->
+
+            </div>
+
+            <div class="delete-item" (click)="deleteItem(prd.id)">
+                <mat-icon color="warn" >delete</mat-icon>
+            </div>
+
+           </section>
+
+        </mat-card-content>
+
+      </mat-card>
+
+     <div class="total mt-4">
+        <h2 style="font-weight: 500;color: #e91e63 !important;" class="text-dark w-50">Total Amount: {{totalCartPrice | currency}}</h2>
+        <!-- <button  mat-raised-button color="primary">Checkout</button> -->
+
+  <google-pay-button
+  environment="TEST"
+  buttonType="buy"
+  [paymentRequest]="{
+    apiVersion: 2,
+    apiVersionMinor: 0,
+    allowedPaymentMethods: [
+      {
+        type: 'CARD',
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
+        },
+        tokenizationSpecification: {
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            gateway: 'example',
+            gatewayMerchantId: 'exampleGatewayMerchantId'
+          }
+        }
+      }
+    ],
+    merchantInfo: {
+      merchantId: '12345678901234567890',
+      merchantName: 'Demo Merchant'
+    },
+    transactionInfo: {
+      totalPriceStatus: 'FINAL',
+      totalPriceLabel: 'Total',
+      totalPrice: '100.00',
+      currencyCode: 'USD',
+      countryCode: 'US'
+    }
+  }"
+  (loadpaymentdata)="onLoadPaymentData($event)"
+></google-pay-button>
+
+     </div>
+
+
+
+
+
+
+
+</section>

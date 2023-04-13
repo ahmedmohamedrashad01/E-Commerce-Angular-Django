@@ -1,0 +1,53 @@
+
+<!-- Products -->
+<hr style="width: 50%; margin: auto" />
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="8px grid">
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let prd of productsByCatId; let i = index; trackBy:trackByFun"
+    >
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+
+          <!-- <mat-card-title
+            >{{ prd.name }}
+            </mat-card-title> -->
+            <p class="text-oneline">{{prd.name}}</p>
+
+        </mat-card-header>
+        <img
+          style="cursor: pointer"
+          [routerLink]="['/Product', prd.id]"
+          mat-card-image
+          [src]="prd.first_image"
+        />
+
+        <mat-card-content>
+          <p class="mt-2">{{ prd.price | currency }}</p>
+        </mat-card-content>
+
+        <!-- <mat-card-actions>
+          <button mat-raised-button color="primary">Add To Cart item</button>
+        </mat-card-actions> -->
+
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div style="margin: auto; text-align: center">
+  <button
+    mat-raised-button
+    color="primary"
+
+    *ngIf="hasMore"
+    type="button"
+    (click)="loadMore()"
+  >
+    Load More...
+  </button>
+</div>

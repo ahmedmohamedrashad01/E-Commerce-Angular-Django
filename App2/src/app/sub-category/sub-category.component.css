@@ -1,0 +1,17 @@
+.content {
+    padding: 16px;
+  }
+
+  .content > mat-card {
+    width: 200px;
+  }
+.mat-mdc-card {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .mdc-card__media{
+    height: 180px !important;
+    width: 70%;
+
+  }

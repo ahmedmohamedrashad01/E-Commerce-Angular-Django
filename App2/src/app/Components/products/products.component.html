@@ -1,0 +1,64 @@
+
+
+    <!-- <div>
+      <h2>{{name}}</h2>
+      <h2>{{price}}</h2>
+      <h2>{{description}}</h2>
+    </div> -->
+
+  <section class="product-section">
+    <div>
+      <div class="small-image">
+        <div>
+          <img [src]="first_image"  (mouseover)="changeImage(first_image)"/>
+        </div>
+
+        <div>
+          <img [src]="second_image"  (mouseover)="changeImage(second_image)" />
+        </div>
+
+        <div>
+          <img [src]="third_image" (mouseover)="changeImage(third_image)"  />
+        </div>
+
+        <div>
+          <img [src]="fourth_image"  (mouseover)="changeImage(fourth_image)" />
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="display-image">
+
+
+      <!-- <div>
+        <img [src]="fourth_image"/>
+      </div> -->
+
+      <div class="zoo">
+
+        <lib-ngx-image-zoom
+        [thumbImage]='imgChange'
+        [fullImage]='imgChange'
+        [magnification]="1.5"
+        [enableScrollZoom]="true"
+        [enableLens]="true"
+        [lensWidth]="230"
+        [lensHeight]="140"
+    ></lib-ngx-image-zoom>
+
+      </div>
+
+
+    </div>
+
+    <!-- _________________________ -->
+    <div class="prd-description">
+      <h2 style="color: #3f51b5d1;">{{name}}</h2>
+      <h2 style="color: #545f9ec9;">Price: {{price | currency}}</h2>
+      <button class="mb-2" mat-raised-button color="primary" (click)="addToCart()">Add To Cart</button>
+      <h2 style="text-align: center; text-justify: inter-word; color: #7c83a8;">{{description}}</h2>
+
+    </div>
+  </section>

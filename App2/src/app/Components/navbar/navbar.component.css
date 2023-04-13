@@ -1,0 +1,41 @@
+
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.mydiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 96%; */
+  margin-top: 10px;
+  width: 100%;
+}
+.shopping{
+  cursor: pointer;
+}
+.mydiv .second{
+ position: relative;
+}
+
+.mydiv .second span{
+  position: absolute;
+  right: 25px;
+  top: -20px;
+  color: whitesmoke;
+ }
+

@@ -1,0 +1,178 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
+
+      <a class="p-2" mat-list-item routerLink="Home" (click)="sidenav.toggle()">
+        <mat-icon
+          matBadgeColor="warn"
+          color="primary"
+          style="vertical-align: middle"
+          >home</mat-icon
+        >
+        Home</a
+      >
+
+
+
+        <a *ngIf="isUserLogged" class="p-2" mat-list-item  (click)="sidenav.toggle()">
+          <mat-icon
+            matBadgeColor="warn"
+            color="primary"
+            style="vertical-align: middle"
+            >person</mat-icon
+          >
+          {{username}}</a>
+
+
+
+      <!-- Start -->
+
+      <div *ngIf="!isUserLogged; else logout">
+        <a
+          class="p-2"
+          mat-list-item
+          routerLink="Login"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon
+            matBadgeColor="warn"
+            color="primary"
+            style="vertical-align: middle"
+            >login</mat-icon
+          >Login
+        </a>
+      </div>
+
+      <ng-template #logout>
+        <div (click)="logoutFun()">
+          <a
+            class="p-2"
+            mat-list-item
+            routerLink="Login"
+            (click)="sidenav.toggle()"
+          >
+            <mat-icon
+              matBadgeColor="warn"
+              color="primary"
+              style="vertical-align: middle"
+              >logout</mat-icon
+            >Logout
+          </a>
+        </div>
+      </ng-template>
+
+      <!-- End -->
+
+      <a
+        *ngIf="!isUserLogged"
+        class="p-2"
+        mat-list-item
+        routerLink="Register"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon
+          matBadgeColor="warn"
+          color="primary"
+          style="vertical-align: middle"
+          >person_add</mat-icon
+        >
+        Register</a
+      >
+
+      <a mat-list-item (click)="sidenav.toggle()">Just For Test Only 2023</a>
+
+
+      <!--  -->
+
+
+      <mat-accordion>
+
+
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+
+        
+
+            <mat-panel-title>
+
+              <mat-icon
+              matBadgeColor="warn"
+              color="primary"
+              style="vertical-align: middle"
+              >search</mat-icon>
+
+              View other details
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+
+          <p> <input #inputSearch (keyup)="searchByProduct(inputSearch.value)" class="form-control" placeholder="Search" type="search"/></p>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+      <!--  -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh">
+      <mat-toolbar color="primary">
+        <button mat-icon-button aria-label="Menu" (click)="sidenav.open()">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <!-- mydiv -->
+        <div class="mydiv">
+          <div><h1 class="mt-1">Ahmed Rashad</h1></div>
+
+          <div class="second" routerLink="Cart" style="cursor: pointer;">
+
+            <span>
+              {{cart}}
+            </span>
+
+            <mat-icon
+                matBadge="cart"
+                class="shopping"
+                matBadgeColor="warn"
+                color="white"
+
+                >shopping_cart
+
+              </mat-icon>
+          </div>
+
+          <!-- <mat-icon [matBadge]="num" matBadgeColor="warn" color="primary">shopping_cart</mat-icon> -->
+        </div>
+      </mat-toolbar>
+
+      <!-- <ng-content>
+
+
+      </ng-content> -->
+      <div class="container-fluid mt-2">
+        <router-outlet ></router-outlet>
+      </div>
+
+
+
+    </div>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#3f51b5"
+  type="square-jelly-box"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>

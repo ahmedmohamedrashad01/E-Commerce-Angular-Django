@@ -1,0 +1,173 @@
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+.mat-mdc-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mdc-card__media {
+  height: 180px !important;
+  width: 70%;
+}
+/* display product */
+.product-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.small-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 70px;
+  height: 100px;
+}
+
+.small-image div {
+  height: 100%;
+  width: 100%;
+}
+
+.small-image div img {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  object-fit: fill;
+}
+
+.display-image{
+  width: 400px;
+  height: 400px;
+
+}
+
+
+.display-image div {
+  height: 100%;
+  width: 100%;
+}
+
+.display-image div img {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  object-fit: fill;
+}
+
+.prd-description{
+
+  /* align-content: center; */
+  flex: 1;
+  text-align: center;
+  
+}
+
+
+
+
+::ng-deep .ngxImageZoomContainer{
+  width: 100% !important;
+  height: 100%;
+  margin: auto !important;
+
+}
+
+::ng-deep .ngxImageZoomThumbnail{
+  width: 100% !important;
+  height: 100%;
+  object-fit: fill;
+
+}
+
+
+
+@media screen and (min-width: 300px) {
+  ::ng-deep .ngxImageZoomContainer{
+    width: 100% !important;
+    height: 400px !important;
+    margin: auto !important;
+  }
+
+  .product-section{
+    flex-direction: column !important;
+    overflow: hidden;
+  }
+  .small-image{
+    flex-direction: row !important;
+    width: 300px;
+    height: 100px;
+  }
+
+  .small-image div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .small-image div img {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    object-fit: fill;
+  }
+
+
+}
+
+@media screen and (min-width: 886px) {
+  ::ng-deep .ngxImageZoomContainer{
+    width: 90% !important;
+    height: 600px !important;
+    margin: auto !important;
+
+  }
+
+  .product-section{
+    flex-direction: row !important;
+    overflow: hidden !important;
+  }
+
+
+  .small-image {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    gap: 10px;
+    width: 70px !important;
+    height: 100px !important;
+  }
+
+  .small-image div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .small-image div img {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    object-fit: fill;
+  }
+
+  ::ng-deep .ngxImageZoomContainer{
+    width: 100% !important;
+    height: 100%;
+    margin: auto !important;
+
+  }
+
+  ::ng-deep .ngxImageZoomThumbnail{
+    width: 100% !important;
+    height: 100%;
+    object-fit: fill;
+
+  }
+}

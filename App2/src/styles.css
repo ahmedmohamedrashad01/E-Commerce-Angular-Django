@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~animate.css/animate.min";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+
+  /* Created with https://www.css-gradient.com */
+  /* background: conic-gradient(from 315deg, #4e266900, #09162214); */
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* background-color: #E3E6E6; */
+  /* Created with https://www.css-gradient.com */
+
+
+  /* background: conic-gradient(from 315deg, #4e266900, #09162214); */
+  /* Created with https://www.css-gradient.com */
+
+ /* background: #4251A8; */
+/* background: -webkit-linear-gradient(left, #4251A8, #FFFFFF);
+background: -moz-linear-gradient(left, #4251A8, #FFFFFF);
+background: linear-gradient(to right, #4251A8, #FFFFFF); */
+}
+
+/*
+.mat-mdc-simple-snack-bar {
+  display: flex;
+  background: #01627b;
+} */
+
+#cdk-overlay-0{
+  margin-bottom: 68px !important;
+
+}
+.mat-mdc-snack-bar-container .mdc-snackbar__surface{
+  /* background-color: red !important; */
+  /* margin-bottom: 75px; */
+}
+.mat-mdc-snack-bar-container .mdc-snackbar__surface span{
+  color: white;
+  /* background-color: #3F51B5; */
+}
+

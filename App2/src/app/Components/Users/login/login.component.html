@@ -1,0 +1,76 @@
+<div class="container frm-div mt-5 content">
+  <form [formGroup]="userForm" (ngSubmit)="login()">
+    <div mat-dialog-title>
+      <h2 style="color: #4b5dc0c4">Login:</h2>
+    </div>
+    <div mat-dialog-content class="content">
+      <div>
+        <mat-icon
+          class="mtIcon"
+          matBadgeColor="warn"
+          color="primary"
+          style="vertical-align: middle"
+          >contact_mail</mat-icon
+        >
+
+        <mat-form-field appearance="outline" class="ms-2">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-icon
+          class="mtIcon"
+          matBadgeColor="warn"
+          color="primary"
+          style="vertical-align: middle"
+          >password</mat-icon
+        >
+
+        <mat-form-field appearance="outline" class="ms-2">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="mb-3 text-center">
+      <button (click)="openDialog()" mat-stroked-button color="warn">Forgot Password</button>
+    </div>
+    <div mat-dialog-actions class="actions">
+      <button
+        class="form-control"
+        mat-raised-button
+        color="primary"
+        type="submit"
+      >
+        <mat-icon
+          class="mtIcon"
+          matBadgeColor="warn"
+          color="white"
+          style="vertical-align: middle"
+          >login</mat-icon
+        >
+
+        Login
+      </button>
+    </div>
+
+
+
+  </form>
+</div>
+
+<!-- <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#3f51b5" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner> -->
+
+<!-- <ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-climbing-dot"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+> -->
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#3f51b5" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
