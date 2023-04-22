@@ -93,7 +93,7 @@
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
 
-        
+
 
             <mat-panel-title>
 
@@ -118,7 +118,8 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div style="height: 88vh">
+    <!-- <div style="height: 88vh"> -->
+    <div>
       <mat-toolbar color="primary">
         <button mat-icon-button aria-label="Menu" (click)="sidenav.open()">
           <mat-icon>menu</mat-icon>
@@ -153,6 +154,7 @@
 
 
       </ng-content> -->
+
       <div class="container-fluid mt-2">
         <router-outlet ></router-outlet>
       </div>
@@ -162,10 +164,20 @@
     </div>
 
 
+
   </mat-sidenav-content>
+
 </mat-sidenav-container>
 
 
+<!-- <mat-card-footer class="foo">
+  <h3>All rights reserved © Ahmed Rashad 2023</h3>
+</mat-card-footer> -->
+
+
+<!-- <footer class="foo" >
+  <h3>All rights reserved © Ahmed Rashad 2023</h3>
+</footer> -->
 
 
 <ngx-spinner

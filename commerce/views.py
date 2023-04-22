@@ -76,7 +76,7 @@ class OrdersViewSets(viewsets.ModelViewSet):
 class ShippingViewSets(viewsets.ModelViewSet):
     queryset = ShippingAddress.objects.all()
     serializer_class = ShippingAddressSerializers
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['customer__email', 'id']
     search_fields = ['customer__email','id']

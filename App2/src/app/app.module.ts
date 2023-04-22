@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -45,15 +45,17 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { ActivateComponent } from './Components/Users/activate/activate.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { SubCategoryComponent } from './sub-category/sub-category.component';
 import { ProductBySubCategoryComponent } from './Components/product-by-sub-category/product-by-sub-category.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { SearchByProductNameComponent } from './Components/search-by-product-name/search-by-product-name.component';
 
 import { GooglePayButtonModule } from '@google-pay/button-angular';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -71,8 +73,6 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
     ProductBySubCategoryComponent,
     CartComponent,
     SearchByProductNameComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -109,8 +109,15 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
     MatSnackBarModule,
     NgxSpinnerModule,
     MatTabsModule,
-    GooglePayButtonModule
-
+    GooglePayButtonModule,
+    TranslateModule.forRoot({
+      defaultLanguage:'en',
+      loader:{
+        provide:TranslateLoader,
+        useFactory:createTranslateLoader,
+        deps:[HttpClient]
+    }
+    }),
 
   ],
 
@@ -118,3 +125,7 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n','.json');
+}

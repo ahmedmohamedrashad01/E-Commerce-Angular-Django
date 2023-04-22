@@ -33,3 +33,17 @@
   .content{
     padding-top: 15px;
   }
+
+  .login-register-btn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-register-btn button{
+   
+    font-size: 14px;
+    width: 100%;
+
+
+  }

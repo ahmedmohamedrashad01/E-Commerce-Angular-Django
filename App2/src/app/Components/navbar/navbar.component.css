@@ -39,3 +39,26 @@
   color: whitesmoke;
  }
 
+
+ mat-sidenav-content{
+  overflow: hidden !important;
+ }
+
+
+
+ .foo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68px;
+  background-color: #3f51b5;
+
+  /* position: fixed;
+  bottom: 0; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.foo h3{
+  color: white;
+}

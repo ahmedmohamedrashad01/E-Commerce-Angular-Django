@@ -45,7 +45,6 @@ export class ProductsService {
   httpOptionsWithToken = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Authorization': JWT' + JSON.parse(localStorage.getItem('userdetails')).token
       Authorization: 'JWT ' + this.cookieService.get('access'),
     }),
   };

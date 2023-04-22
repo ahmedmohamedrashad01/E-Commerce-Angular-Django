@@ -10,7 +10,7 @@ export class SnackService {
   openSnackBar(message: string, action: string = 'Ok') {
 
     this._snackBar.open(message, action, {
-      duration: 3000,
+      duration: 2500,
       verticalPosition: 'bottom', // 'top' | 'bottom'
       horizontalPosition: 'center', //'start' | 'center' | 'end' | 'left' | 'right'
       // panelClass: ['green-snackbar', 'login-snackbar'],

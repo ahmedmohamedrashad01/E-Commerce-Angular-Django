@@ -35,9 +35,6 @@
       </div>
     </div>
 
-    <div class="mb-3 text-center">
-      <button (click)="openDialog()" mat-stroked-button color="warn">Forgot Password</button>
-    </div>
     <div mat-dialog-actions class="actions">
       <button
         class="form-control"
@@ -56,6 +53,12 @@
         Login
       </button>
     </div>
+
+    <div class="mt-3 text-center m-1 login-register-btn">
+      <button class="m-1" (click)="openDialog()"  mat-raised-button color="warn">Forgot Password</button>
+      <button class="m-1" routerLink="/Register"  mat-raised-button color="warn">Register</button>
+    </div>
+
 
 
 
