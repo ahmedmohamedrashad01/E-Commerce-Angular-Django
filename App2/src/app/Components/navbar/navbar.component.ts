@@ -39,7 +39,16 @@ export class NavbarComponent implements OnInit {
     private _prdService: ProductsService
   ) {}
   ngOnInit() {
-    this.checkTheBehaviorSubject();
+    if (
+      this.cookieService.get('access') &&
+      this.cookieService.get('email_address')
+    ) {
+      this._userService.isLoggedSubject.next(true);
+      this.checkTheBehaviorSubject();
+    } else {
+      this._userService.isLoggedSubject.next(false);
+    }
+
   }
 
   checkTheBehaviorSubject() {

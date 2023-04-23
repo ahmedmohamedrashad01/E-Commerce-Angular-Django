@@ -31,14 +31,16 @@ export class UsersService implements OnInit {
     }
   }
   ngOnInit() {
-    if (
-      this.cookieService.get('access') &&
-      this.cookieService.get('email_address')
-    ) {
-      this.isLoggedSubject.next(true);
-    } else {
-      this.isLoggedSubject.next(false);
-    }
+
+    // if (
+    //   this.cookieService.get('access') &&
+    //   this.cookieService.get('email_address')
+    // ) {
+    //   this.isLoggedSubject.next(true);
+    // } else {
+    //   this.isLoggedSubject.next(false);
+    // }
+
   }
 
   httpOptions = {
