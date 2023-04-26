@@ -1,6 +1,7 @@
 
 .content {
   padding: 16px;
+  background: conic-gradient(from 315deg, #4e266900, #09162214); 
 }
 
 .content > mat-card {

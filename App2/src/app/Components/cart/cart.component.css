@@ -1,6 +1,8 @@
+
 .parent-section {
   /* width: 90%; */
   margin: auto;
+  
 }
 .main {
   display: flex;
@@ -15,7 +17,7 @@
 
 .main .first {
   /* align-self: flex-start; */
-  background-color: red;
+  /* background-color: red; */
   height: 75px;
   /* width: 100%; */
   margin-top: 5px;
@@ -88,14 +90,15 @@
 
   .main .first {
     /* align-self: flex-start; */
-    background-color: red;
+    /* background-color: red; */
     height: 120px;
     width: 100%;
     margin-top: 5px;
+    text-align: center;
   }
   .main .first img {
     height: 100%;
-    width: 100%;
+    width: 50%;
     object-fit: fill;
   }
   .second{
