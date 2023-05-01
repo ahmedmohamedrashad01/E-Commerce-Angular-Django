@@ -75,7 +75,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     SearchByProductNameComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
